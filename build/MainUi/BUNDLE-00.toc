@@ -1,0 +1,3 @@
+([('MainUi',
+   '/Users/yuanwei/Documents/study/pythone/chouchou/dist/MainUi',
+   'EXECUTABLE')],)
