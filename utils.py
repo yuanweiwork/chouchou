@@ -4,22 +4,43 @@ import os
 base_dir = os.path.dirname(os.path.dirname(__file__))
 
 
+def getBaseDir():
+    dirs=base_dir+"\config"
+    if not os.path.exists(dirs):
+        os.makedirs(dirs)
+    return dirs
+
+def getDbDir():
+    dirs = getBaseDir() + "\chouchou.db"
+    if not os.path.exists(dirs):
+        os.makedirs(dirs)
+    return dirs
+
+
 def getConfig():
-    path = base_dir + "/config.json"
-    if not os.path.exists(path):
-        open(path, 'w')
+    path = getBaseDir() + "\config.json"
+    print(path)
+    checkFile(path)
     if os.path.getsize(path) == 0:
         return None
     with open(path, 'r', encoding='utf8')as fp:
         json_data = json.load(fp)
         return json_data
 
+def checkFile(file):
+    try:
+        f = open(file, 'r')
+        f.close()
+    except IOError:
+        f = open(file, 'w')
+        f.close()
+
 
 def setConfig(key, value):
     global dict1
-    path = base_dir + "/config.json"
-    if not os.path.exists(path):
-        open(path, 'w')
+    path = getBaseDir() + "\config.json"
+    print(path)
+    checkFile(path)
     dict = {}
     temp = getConfig()
     if temp is not None:

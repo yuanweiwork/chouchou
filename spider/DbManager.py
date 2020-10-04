@@ -3,6 +3,7 @@ import os
 import sqlite3
 
 from Model import Goods
+from utils import getBaseDir, getDbDir
 
 
 class DbManager:
@@ -17,8 +18,7 @@ class DbManager:
 
     def __init__(self):
         if DbManager.__flag_init:
-            path = os.path.dirname(os.path.dirname(__file__)) + "/chouchou.db"
-            self.conn = sqlite3.connect(path)
+            self.conn = sqlite3.connect(getDbDir())
             DbManager.__flag_init = False
 
     def exists(self, tableName):
@@ -68,3 +68,16 @@ class DbManager:
                 sku.goodskuId, sku.goodid, sku.skuname, sku.imageUrl, sku.price, sku.path)
             c.execute(sql)
             self.conn.commit()
+
+    def getMaxGoodsId(self):
+        c = self.conn.cursor()
+        sql='''SELECT GOOD_ID FROM GOODS ORDER BY DESC'''
+        cursor =c.execute(sql)
+        if len(cursor) != 0:
+            return str(cursor[0])
+        else:
+            return "1000"
+
+
+
+        pass

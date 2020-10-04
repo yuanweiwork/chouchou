@@ -35,9 +35,11 @@ class MainGui:
         
         self._1688Button = Button(self.init_window_name, text="1688抓取图片工具", command=self._1688ButtonCallback)
         self._1688Button.pack(fill=X, ipady=10)
-        utils.setConfig("maxId", 100)
+
         if not DbManager().exists("GOODS"):
             DbManager().createGoods()
+        utils.setConfig("maxId", DbManager().getMaxGoodsId())
+
 
     def _1688ButtonCallback(self):
         global goodTopLevel
