@@ -9,7 +9,6 @@ from ConstantURL import *
 import time
 
 # driver = webdriver.Chrome()
-
 username = os.getenv("USERNAME")
 userProfile = "\\Users\\yuanwei\\Documents\\video\\Default"
 options = webdriver.ChromeOptions()
@@ -48,20 +47,6 @@ def login(username, password):
     passwordInput.send_keys(password)
     time.sleep(1)
     passwordInput.send_keys(Keys.ENTER)
-
-    # iframes = browser.find_elements_by_tag_name("iframe")
-    # print(len(iframes))
-    # browser.switch_to.frame(iframes[0])
-
-    # usernameinput = browser.find_element_by_id("fm-login-id")
-    # usernameinput.send_keys(username)
-    # passwordinput = browser.find_element_by_id("fm-login-password")
-    # passwordinput.send_keys(password)
-    # passwordinput.send_keys(Keys.ENTER)
-    # wait = WebDriverWait(browser, 1000)
-    # wait.until(EC.presence_of_element_located((By.ID, "content_left")))
-    # print(browser.current_url)
-    # print(browser.get_cookies())
     print(driver.page_source)
 
 
