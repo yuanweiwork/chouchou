@@ -1,23 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="test" uuid="ab0185d3-535a-47de-9f51-c1d243195290">
+    <data-source source="LOCAL" name="chouchou" uuid="995248f7-5fba-4623-b64a-2b51d19d0cc0">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/spider/test.db</jdbc-url>
-    </data-source>
-    <data-source source="LOCAL" name="chouchou" uuid="8a022513-1af1-48fe-8232-706194f605c5">
-      <driver-ref>sqlite.xerial</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/chouchou.db</jdbc-url>
-    </data-source>
-    <data-source source="LOCAL" name="chouchou [2]" uuid="7f5204f6-6059-47be-9aa9-8ba088ec441c">
-      <driver-ref>sqlite.xerial</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\长长\chouchou\dist\config\chouchou.db</jdbc-url>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/dist/config/chouchou.db</jdbc-url>
       <libraries>
         <library>
           <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.31.1/sqlite-jdbc-3.31.1.jar</url>

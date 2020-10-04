@@ -14,6 +14,8 @@ from spider.DeviceManager import DeviceManager
 from spider.ImageLoader import formatIndex, downloadImageSize
 from utils import getConfig
 
+clickid = "&clickid=459c155c54f04734a21a6792f8dd45a7&sessionid=926b47fef14071a20b10b291c4c8db99"
+
 
 class GoodsTopLevel:
     def __init__(self, tk):
@@ -32,8 +34,16 @@ class GoodsTopLevel:
         self.initViews()
 
     def initViews(self):
-        self.init_open_device_button = Button(self.top, text="打开浏览器", command=self.openDeviceCallBack)
-        self.init_open_device_button.pack(fill=X, ipady=10)
+        # self.init_open_device_button = Button(self.top, text="打开浏览器", command=self.openDeviceCallBack)
+        # self.init_open_device_button.pack(fill=X, ipady=10)
+        #
+        # self.search_user_sid = Button(self.top, text="抓取身份信息", command=self.search_user_sid_callback)
+        # self.search_user_sid.pack(fill=X, ipady=10)
+        # text = getConfig()["sid"]
+        # if text == "":
+        #     text = "请打开浏览器,登录后 点击抓取身份信息！"
+        # self.init_sid_lib = Label(self.top, text=text)
+        # self.init_sid_lib.pack(fill=X, ipady=10)
 
         self.init_edit_goods_url = Text(self.top, width=70, height=5)
         self.init_edit_goods_url.config(highlightbackground="black")
@@ -51,9 +61,6 @@ class GoodsTopLevel:
     def openDeviceCallBack(self):
         # 打开浏览器
         DeviceManager().getUrl("https://www.1688.com/")
-
-    def show(self):
-        pass
 
     def addLogMessage(self, message):
         self.layout.insert(INSERT, chars=message + '\n')
@@ -73,7 +80,7 @@ class GoodsTopLevel:
             goodsUrlList.append(line)
         self.addLogMessage("检测到网址" + str(len(goodsUrlList)))
         for url in goodsUrlList:
-            url_device = DeviceManager().getUrl(url)
+            url_device = DeviceManager().getUrl(url + clickid)
             time.sleep(random.randint(2, 6))
             htmlstr = url_device.page_source
             htmlstr = html.unescape(htmlstr)

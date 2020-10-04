@@ -35,7 +35,7 @@ def downloadImage(imgUrl, saveFileDir, name):
 
 
 def formatIndex(index):
-    if index < 100:
+    if int(index) < 100:
         if index < 10:
             index = '0' + str(index)
         index = '0' + str(index)

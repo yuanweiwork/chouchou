@@ -7,6 +7,7 @@ class Goods:
         self.details = details
 
 
+
 class GoodsSku:
     def __init__(self, goodid="", goodskuId="", skuname="", imageUrl="", price="", path=""):
         self.goodid = goodid
