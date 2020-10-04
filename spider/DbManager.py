@@ -71,13 +71,10 @@ class DbManager:
 
     def getMaxGoodsId(self):
         c = self.conn.cursor()
-        sql='''SELECT GOOD_ID FROM GOODS ORDER BY DESC'''
-        cursor =c.execute(sql)
+        sql='''SELECT GOOD_ID FROM GOODS ORDER BY GOOD_ID DESC'''
+        c.execute(sql)
+        cursor=c.fetchall()
         if len(cursor) != 0:
             return str(cursor[0])
         else:
             return "1000"
-
-
-
-        pass

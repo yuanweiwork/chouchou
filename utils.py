@@ -13,14 +13,11 @@ def getBaseDir():
 
 def getDbDir():
     dirs = getBaseDir() + "\chouchou.db"
-    if not os.path.exists(dirs):
-        os.makedirs(dirs)
     return dirs
 
 
 def getConfig():
     path = getBaseDir() + "\config.json"
-    print(path)
     checkFile(path)
     if os.path.getsize(path) == 0:
         return None
@@ -41,7 +38,6 @@ def checkFile(file):
 def setConfig(key, value):
     global dict1
     path = getBaseDir() + "\config.json"
-    print(path)
     checkFile(path)
     dict = {}
     temp = getConfig()

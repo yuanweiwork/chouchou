@@ -2,3 +2,7 @@
 /venv/*
 /build/*
 /.idea/*
+/dist/MainUi.exe
+/dist/MainUi/*
+/MainUi.spec
+/.idea/dataSources.xml

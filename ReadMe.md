@@ -12,4 +12,4 @@ mainui
 
 
 
-pyinstaller -F -d MainUi.py 
+pyinstaller -F -D MainUi.py --noconfirm
