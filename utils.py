@@ -5,10 +5,11 @@ base_dir = os.path.dirname(os.path.dirname(__file__))
 
 
 def getBaseDir():
-    dirs=base_dir+"\config"
+    dirs = base_dir + "\config"
     if not os.path.exists(dirs):
         os.makedirs(dirs)
     return dirs
+
 
 def getDbDir():
     dirs = getBaseDir() + "\chouchou.db"
@@ -26,6 +27,7 @@ def getConfig():
     with open(path, 'r', encoding='utf8')as fp:
         json_data = json.load(fp)
         return json_data
+
 
 def checkFile(file):
     try:
