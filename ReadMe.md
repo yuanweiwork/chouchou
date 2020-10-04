@@ -12,4 +12,4 @@ mainui
 
 
 
-pyinstaller -F -w MainUi.py 
+pyinstaller -F -d MainUi.py 

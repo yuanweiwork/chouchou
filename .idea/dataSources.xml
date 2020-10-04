@@ -7,5 +7,17 @@
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/spider/test.db</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="chouchou" uuid="e542a62d-837f-49ad-a204-6aeaa253c1fe">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\长长\chouchou\chouchou.db</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="SQLite - chouchou.db" uuid="8954c7c9-e36a-43cc-992c-7ec7e65b40ff">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/chouchou.db</jdbc-url>
+    </data-source>
   </component>
 </project>
