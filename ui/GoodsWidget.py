@@ -34,9 +34,9 @@ class GoodsTopLevel:
         self.initViews()
 
     def initViews(self):
-        # self.init_open_device_button = Button(self.top, text="打开浏览器", command=self.openDeviceCallBack)
-        # self.init_open_device_button.pack(fill=X, ipady=10)
-        #
+        self.init_open_device_button = Button(self.top, text="打开浏览器", command=self.openDeviceCallBack)
+        self.init_open_device_button.pack(fill=X, ipady=10)
+
         # self.search_user_sid = Button(self.top, text="抓取身份信息", command=self.search_user_sid_callback)
         # self.search_user_sid.pack(fill=X, ipady=10)
         # text = getConfig()["sid"]
@@ -178,6 +178,7 @@ class GoodsTopLevel:
             skuimgPath = self.downloadSkuImageUrl(skuimg)
             for index, li in enumerate(lis):
                 li.click()
+                time.sleep(random.randint(2, 5))
                 skusizeStr = re.findall('<tableclass="table-sku">(.*)</table>', htmlstr, flags=re.DOTALL)
                 searchsku = self.search_good_sku(skusizeStr[0], skuimg[index], skuimgPath[index], index)
                 for sku in searchsku:
