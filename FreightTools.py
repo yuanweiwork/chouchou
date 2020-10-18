@@ -42,10 +42,10 @@ def ergodicTable():
                 row = sheet.row_values(index)
                 if row[column] is not None and row[column] != "-" and row[column] != "无服务":
                     kgPrice = row[column]
-                    itemIndex = column + 1
-                    aa = row[itemIndex]
-                    price = kgPrice / 1000 * weight + int(aa)
-                    list.append(Country(row[0], round(price, 2)))
+                    item = row[column + 1]
+                    price = kgPrice / 1000 * weight + item
+                    print(str(row[0]) + str(price) + "==" + str(kgPrice) + "==" + str(item))
+                    list.append(Country(row[0], price))
             except Exception as e:
                 print(e)
                 pass
